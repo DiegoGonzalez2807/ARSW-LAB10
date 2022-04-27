@@ -22,9 +22,25 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part3/part3-function-configii.png)
 
+#### Creación de Aplicación de funciones Fibonacci
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Crear1.png)
+
+#### Almacenamiento de la función
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Storage.png)
+
+#### Plan de la función
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Plan.png)
+
 2. Instale la extensión de **Azure Functions** para Visual Studio Code.
 
 ![](images/part3/part3-install-extension.png)
+
+### Instalación de la herramienta - extensión Azure Functions 
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Azure-Functions.png)
 
 3. Despliegue la Function de Fibonacci a Azure usando Visual Studio Code. La primera vez que lo haga se le va a pedir autenticarse, siga las instrucciones.
 
@@ -32,7 +48,32 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 ![](images/part3/part3-deploy-function-2.png)
 
+
+#### Despliegue de la función Fibonacci a través de la extensión Azure Functions de Visual Studio Code
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/ProyectoFibonacci.png)
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/EjecutaFibo1.png)
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/EjecutaFibo2.png)
+
 4. Dirijase al portal de Azure y pruebe la function.
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/AppFunciones.png)
+
+#### Funciones definidas dentro de Azure
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Funciones.png)
+
+#### Metrica de Almacenamiento
+
+![](https://github.com/DiegoGonzalez2807/ARSW-LAB10/blob/main/images/Solution/Metricas.png)
+
+En la anterior métrica se aprecia que se han estado haciendo varias pruebas de despliegue de la función, cambiando cierta parte del código para revisar que efectivamente se estuviera desplegando dentro de Azure y que el código modificado sea actualizado al momento de subir el contenido desde Visual Studio Code
+
+EN la métrica se observa que el último despliegue tiene un peso de 104.7 MB
+
+### Aplicativo de Funciones
 
 ![](images/part3/part3-test-function.png)
 
