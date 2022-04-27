@@ -3,6 +3,10 @@
 
 ## Escalamiento en Azure con Maquinas Virtuales, Sacale Sets y Service Plans
 
+## Integrantes
+  Cristian Andres Castellanos Fino  
+  Diego Alejandro Gonzalez Gualteros  
+
 ### Dependencias
 * Cree una cuenta gratuita dentro de Azure. Para hacerlo puede guiarse de esta [documentación](https://azure.microsoft.com/es-es/free/students/). Al hacerlo usted contará con $100 USD para gastar durante 12 meses.
 Antes de iniciar con el laboratorio, revise la siguiente documentación sobre las [Azure Functions](https://www.c-sharpcorner.com/article/an-overview-of-azure-functions/)
@@ -83,11 +87,42 @@ EN la métrica se observa que el último despliegue tiene un peso de 104.7 MB
 
 **Preguntas**
 
-* ¿Qué es un Azure Function?
-* ¿Qué es serverless?
-* ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
-* ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
-* ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
-* ¿Por qué la memoization falla o no funciona de forma correcta?
-* ¿Cómo funciona el sistema de facturación de las Function App?
-* Informe
+- Que es azure Functions  
+	"Azure Functions es un servicio en la nube disponible a petición que proporciona toda la infraestructura y los recursos, que se actualizan continuamente, necesarios para ejecutar las aplicaciones. Usted se centra en los fragmentos de código que más le importan y Functions se ocupa del resto. Functions proporciona proceso sin servidor para Azure. Functions también se puede usar para crear API web, responder a los cambios en las bases de datos, procesar secuencias de IoT, administrar colas de mensajes, etc."(Documentación de Azure Functions,[Que es Azure Functions](https://docs.microsoft.com/es-es/azure/azure-functions/#:~:text=Azure%20Functions%20es%20un%20servicio,Functions%20se%20ocupa%20del%20resto.)(Que es Azure Functions)
+- Que es Serverless  
+	Serverless se refiere a una computacion sin servidor, es decir un modelo en el cual el proveedor de la nube es el responsable de asignar los recursos necesarios para la ejecucion de las aplicaciones o fragmentos de codigo.[Serverless](https://serverless-stack.com/chapters/es/what-is-serverless.html)
+
+- ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?  
+	El runtime actua como un sistema operativo pequeño que provee todos los recursos necesario para la ejecucion de las aplicaciones. Al momento de crear la Function App al elegir el runtime, le indicamos al programa que recursos requerimos para que nuestra aplicacion corra.[Runtime](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-un-runtime-environment/)
+
+- ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.  
+	Plan de consumo  
+	Escale de forma automática y pague los recursos de proceso solo cuando se ejecuten las funciones.  
+	En el plan de consumo, las instancias del host de Functions se agregan y quitan de forma dinámica según el número de eventos de entrada.  
+	* Plan de hospedaje predeterminado.  
+	* Pague solo cuando se ejecutan las funciones.  
+	* Escala de forma automática, incluso durante períodos de carga elevada.  
+
+	Plan Premium  
+	Escala automáticamente en función de la demanda mediante trabajos preparados previamente que ejecutan aplicaciones sin ningún retraso después de estar inactivas, ejecuta en instancias más eficaces y se conecta a redes virtuales.  
+	Considere la posibilidad de elegir el plan Premium de Azure Functions en las siguientes situaciones:  
+	* La aplicación de funciones se ejecuta de forma continua, o casi continua.  
+	* Tiene un gran número de ejecuciones pequeñas y una factura de ejecución elevada, pero pocos GB por segundo en el plan de consumo.  
+	* Necesita más opciones de CPU o memoria de las que proporciona el plan de consumo.  
+	* Su código debe ejecutarse durante más tiempo del máximo permitido en el plan de consumo.  
+	* Necesita características que no están disponibles en el plan de consumo, como la conectividad con red virtual.  
+  
+	Plan dedicado  
+	Ejecute las funciones en un plan de App Service a los Precios de App Service normales. Mejor para escenarios de ejecución prolongada en los que no se puede usar Durable Functions. Considere el plan de App Service en las situaciones siguientes:  
+	* Tiene máquinas virtuales infrautilizadas que ya ejecutan otras instancias de App Service.  
+	* Quiere proporcionar una imagen personalizada en la que ejecutar sus funciones.  
+	* Se requieren escalado y costos predictivos.  
+	[Planes azure FunctionApp](https://docs.microsoft.com/es-mx/azure/azure-functions/functions-scale?WT.mc_id=Portal-WebsitesExtension)
+  
+- ¿Por qué la memoization falla o no funciona de forma correcta?  
+	La memoization falla debido a que los numeros son demasiado grandes, lo cual hace que el almacenamiento en cache empiece a llenarse y hacer que la aplicacion falle.  
+	  
+- ¿Cómo funciona el sistema de facturación de las Function App?  
+	Consumo  
+El plan de consumo de Azure Functions se factura en función del consumo de recursos y las ejecuciones por segundo. Los precios del plan de consumo incluyen una concesión gratuita mensual de 1 millones de solicitudes y 400.000 GB-segundos de consumo de recursos por suscripción en el modelo de precios de pago por uso, para todas las aplicaciones de funciones de esa suscripción. El plan Azure Functions Premium proporciona un rendimiento mejorado y se factura por segundo en función del número de vCPU/s y de GB/s que consuman sus funciones premium. Los clientes también puede ejecutar Functions dentro de su plan de App Service a las tarifas normales del plan de App Service.  
+	[Consumo FunctionApp](https://azure.microsoft.com/es-es/pricing/details/functions/)
